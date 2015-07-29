@@ -78,9 +78,12 @@ apt-get install -y iptables-persistent
 /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m /mnt/secondary -u http://cloudstack.apt-get.eu/systemvm/4.5/systemvm64template-4.5-xen.vhd.bz2 -h xenserver -s 2938fh4t3u4t4 -F
 #FOR VMWARE
 /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m /mnt/secondary -u http://cloudstack.apt-get.eu/systemvm/4.5/systemvm64template-4.5-vmware.ova -h vmware -s 2938fh4t3u4t4  -F
-
+#FOR LXC
+/usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m /mnt/secondary -u http://cloudstack.apt-get.eu/systemvm/4.5/systemvm64template-4.5-kvm.qcow2.bz2 -h lxc -s 2938fh4t3u4t4  -F
 
 #Restart Cloudstack
 
 service cloudstack-management stop
 service cloudstack-management start
+
+udpate-rc.d cloudstack-management defaults
